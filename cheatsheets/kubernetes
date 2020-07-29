@@ -1,0 +1,2 @@
+kubectl api-versions	# lista versiones de apis
+kubectl api-resources	# lista los posibles recursos

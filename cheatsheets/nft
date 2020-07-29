@@ -1,0 +1,20 @@
+nft list, flush, delete ruleset 		# list, delete or flush all nft rules. flush clean up the tables but it does not remove them (use delete)
+
+## tables
+nft list tables [<family>]		# list all tables
+nft list table [<family>] <name> [-n] [-a]		# list a table
+nft (add | delete | flush) table [<family>] <name>		# add, delete or flush a table
+## end tables
+
+## chain
+nft (add | create) chain [<family>] <table> <name> [ { type <type> hook <hook> [device <device>] priority <priority> \; [policy <policy> \;] } ]  # create a chain
+nft (delete | list | flush) chain [<family>] <table> <name>			# delete, flush or list a chain
+nft rename chain [<family>] <table> <name> <newname>				# remove a chain
+## end chain
+
+## rules
+nft add rule [<family>] <table> <chain> <matches> <statements>		# add a rule
+nft insert rule [<family>] <table> <chain> [position <position>] <matches> <statements> # add a rule in a position
+nft replace rule [<family>] <table> <chain> [handle <handle>] <matches> <statements>	# replace a rule
+nft delete rule [<family>] <table> <chain> [handle <handle>]						# delet a rule
+## end rules

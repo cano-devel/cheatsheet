@@ -1,0 +1,7 @@
+docker save -o <name.tar> <image_name>	# save a image
+docker load -i <name.tar>				# load a image
+docker rmi <image> [image_2...]			# remove a list of images
+docker image prune -a					# remove|delete images are not being used
+docker system prune -a					# remove all objects are not being used
+docker exec -it <container name> <cmd>	# execute a command in the container
+docker exec -it <container name> /bin/bash # exec, go into the container

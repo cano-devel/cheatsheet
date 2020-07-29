@@ -1,0 +1,2 @@
+RUN			# execute a rule to build the container
+CMD			# execute a command when the container is launched

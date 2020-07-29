@@ -1,0 +1,2 @@
+yay -Sc		# clean cache
+yay -Rns <pkgname>	# remove pkg
