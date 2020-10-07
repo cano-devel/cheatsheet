@@ -1,0 +1,3 @@
+
+git format-path <first_commit>..<last_commit>		# Create a list of commmit patches using two commits
+git apply <commit-file> 		# Apply commit

@@ -1,1 +1,2 @@
 find . -type f -size +100000k -exec ls -lh {} \;   	# look for big files
+find . -regextype egrep -regex '.*.p[ml]$' -exec wc -l {} \	# apply command to files with a match condition

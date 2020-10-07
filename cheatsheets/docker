@@ -3,5 +3,12 @@ docker load -i <name.tar>				# load a image
 docker rmi <image> [image_2...]			# remove a list of images
 docker image prune -a					# remove|delete images are not being used
 docker system prune -a					# remove all objects are not being used
-docker exec -it <container name> <cmd>	# execute a command in the container
-docker exec -it <container name> /bin/bash # exec, go into the container
+docker exec -it <container_name> <cmd>	# execute a command in the container
+docker exec -it <container_name> /bin/bash # exec, go into the container
+docker build -t <docker_name:tag> <dir_with_dockerfile>				# create docker from dockerfile
+docker ps								# show dokers running
+docker commit <containerID> <container_name>	# save changes
+docker rm <container_name>				# remove docker
+
+docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v /dev/shm:/dev/shm --device /dev/dri --name qt_install --privileged --entrypoint /qt-unified-linux-x64-online.run qt:base  # run docker to install qtcreator
+docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -p 80:80 -p 443:443  -v /dev/shm:/dev/shm -v /home/cano/git:/root -v /tmp/qtcreator:/tmp/qtcreator --device /dev/dri --name qt_creator --privileged --net=host --rm --entrypoint /home/user/Qt/Tools/QtCreator/bin/qtcreator qt:latest 	# run docker with qtcreator
