@@ -1,0 +1,14 @@
+# https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
+
+journalctl -b				# boot logs
+journalctl -k				# kernel logs
+journalctl -p <emerg|alert|crit|err|warning|notice|info|debug>		# priority
+
+journalctl -u nginx.service		# process
+
+journalctl --since "2015-01-10 17:15:00"	# display since
+journalctl --since yesterday	# display since macro
+
+journalctl -n 20		# display N lines
+journalctl -f			# track file
+
