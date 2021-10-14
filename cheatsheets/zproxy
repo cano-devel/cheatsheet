@@ -1,0 +1,8 @@
+dev:
+auto &listener_config_ = *stream.service_manager->listener_config_;		# get listener config from stream
+auto service = static_cast<Service *>(stream.request.getService());		# get service config from stream
+
+ctl:
+curl -X PATCH -s --show-error --unix-socket /tmp/ReverseProxy_proxy.socket http://localhost/config # reload config
+curl -X PUT -d '{"backend-id": 0,"id": "10.1.1.0"}' --connect-timeout 2  -s -k --show-error  --unix-socket /tmp/zproxy.socket http://localhost/listener/0/services/0/sessions   # add session
+curl -X PATCH -d '{status: "disabled"}' --connect-timeout 2  -s -k --show-error  --unix-socket /tmp/zproxy.socket http://localhost/listener/0/service/0/backend/0/status  # put bck in maintenance

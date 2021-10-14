@@ -1,0 +1,2 @@
+xinput -list | grep "USB Keyboard"	# list the devices
+setxkbmap -device <device_id> -layout es		# set the language

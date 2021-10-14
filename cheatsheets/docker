@@ -5,9 +5,10 @@ docker image prune -a					# remove|delete images are not being used
 docker system prune -a					# remove all objects are not being used
 docker exec -it <container_name> <cmd>	# execute a command in the container
 docker exec -it <container_name> /bin/bash # exec, go into the container
+docker run -u 0 -it <image:tag> bash 	# go into docker image with root user
 docker build -t <docker_name:tag> <dir_with_dockerfile>				# create docker from dockerfile
 docker ps								# show dokers running
-docker commit <containerID> <container_name>	# save changes
+docker commit <containerID> <container_name>	# save changes of the container
 docker rm <container_name>				# remove docker
 
 docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v /dev/shm:/dev/shm --device /dev/dri --name qt_install --privileged --entrypoint /qt-unified-linux-x64-online.run qt:base  # run docker to install qtcreator

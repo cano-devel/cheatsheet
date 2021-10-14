@@ -1,0 +1,4 @@
+clang-format -i <dir>/*.[ch]		# copy .clang-format in the project dir from https://github.com/torvalds/linux/blob/master/.clang-format
+gofmt -s -w .			# GO lang
+perltidy -t -et=4 -bt=0 -bl -sbl -bbvt=0 -pt=0 -sbt=2 -skp -nolq -lp -vt=0 -vtc=0 -vmll <files>
+

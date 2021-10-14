@@ -1,0 +1,1 @@
+<OUTPUT> | awk '{print $2}'  # filter field 2

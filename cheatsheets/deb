@@ -1,0 +1,2 @@
+dpkg-deb -x <package.deb> <output_dir> 		# extract a package in a directory
+dpkg -L  <package.deb>			# list the files in a package

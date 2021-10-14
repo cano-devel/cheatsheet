@@ -1,0 +1,5 @@
+!TLSv1:!TLSv1_1		# disable a protocol version in ssl server cfg
+openssl s_client -connect <IP>:443 -tls1_2		# connect with a SSL version
+nmap --script ssl-enum-ciphers -p 443 <IP>	# check all ciphers availables in the server
+openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out raw-cert.pem; cat key.pem > cert.pem ; cat raw-cert.pem >>cert.pem 	# create pem certificate
+openssl x509 -in <cert_file> -text -noout    # get info of a certificate

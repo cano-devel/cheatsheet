@@ -1,2 +1,3 @@
 yay -Sc		# clean cache
 yay -Rns <pkgname>	# remove pkg
+yay -Ql <pkgname> 	# list files of a pkg

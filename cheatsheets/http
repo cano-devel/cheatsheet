@@ -1,0 +1,1 @@
+printf "GET / HTTP/1.1\r\n\r\n" | netcat 127.0.0.1 80  # Do a request and keep the connection open
