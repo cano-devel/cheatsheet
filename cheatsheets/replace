@@ -1,0 +1,1 @@
+ grep -rl checkZAPIParams2 /usr/share/perl5/Zevenet/API40/ | xargs sed -i 's/checkZAPIParams2/checkZAPIParams/g'  # replace a string in a directory

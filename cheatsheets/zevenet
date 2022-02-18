@@ -1,0 +1,1 @@
+curl -k -X POST -H 'Content-Type: application/json' -H "ZAPI_KEY: root" -d '' https://<zevenet_server>:444/zapi/v4.0/zapi.cgi/farms # GET parameters of a ZAPI request

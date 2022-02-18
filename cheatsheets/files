@@ -1,1 +1,2 @@
 fallocate -l <2.4G> <output_file>    # it creates a file with a size of X bytes
+base64 /dev/urandom | head -c <sizeBytes> > <output_file>

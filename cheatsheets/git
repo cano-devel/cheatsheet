@@ -1,3 +1,4 @@
 git merge <LOCAL_BRANCH> --allow-unrelated-histories -s recursive -X theirs # merge branches that does not have the same origin
 git format-path <first_commit>..<last_commit>		# Create a list of commmit patches using two commits
 git apply <commit-file> 		# Apply commit
+git submodule update --init --recursive   # get latest changes of a submodule

@@ -1,0 +1,7 @@
+/usr/local/zevenet/app/ssyncd/zproxy/bin/ssyncdctl show mode		# show the node role
+
+/usr/local/zevenet/app/ssyncd/zproxy/bin/ssyncd -d -B -p 9999 -a 192.168.100.241 -l9   # run in backup mode
+/usr/local/zevenet/app/ssyncd/zproxy/bin/ssyncd -d -M -p 9999 -a 192.168.100.241 -l9   # run in master mode
+
+curl --unix-socket /tmp/replica-http_proxy.socket http://localhost/listener/0/sessions | jq    # list sessions of zproxy
+/usr/local/zevenet/app/ssyncd/zproxy/bin/ssyncdctl show http | grep -v "^farm: "| jq 	# list sessions of ssyncd

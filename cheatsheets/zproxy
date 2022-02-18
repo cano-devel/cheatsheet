@@ -6,3 +6,7 @@ ctl:
 curl -X PATCH -s --show-error --unix-socket /tmp/ReverseProxy_proxy.socket http://localhost/config # reload config
 curl -X PUT -d '{"backend-id": 0,"id": "10.1.1.0"}' --connect-timeout 2  -s -k --show-error  --unix-socket /tmp/zproxy.socket http://localhost/listener/0/services/0/sessions   # add session
 curl -X PATCH -d '{status: "disabled"}' --connect-timeout 2  -s -k --show-error  --unix-socket /tmp/zproxy.socket http://localhost/listener/0/service/0/backend/0/status  # put bck in maintenance
+curl -X GET -s --show-error --unix-socket /tmp/ReverseProxy_proxy.socket http://localhost/listener/0   # get stats
+
+lab:
+iptables -d 127.0.0.1 -p tcp --dport 443 -j DNAT --to-destination 127.0.0.1:4443 -I OUTPUT -t nat	# send requests to vm

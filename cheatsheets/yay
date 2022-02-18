@@ -1,3 +1,10 @@
 yay -Sc		# clean cache
 yay -Rns <pkgname>	# remove pkg
 yay -Ql <pkgname> 	# list files of a pkg
+yay -Qqe		# get a list of installed pkg
+yay -Qqen  	# official repos
+yay -Qqem	# AUR repositories
+yay -S $(cat <file> | cut -d' ' -f1)	# install packages from file
+
+reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlis  # sort the repositories by ping
+

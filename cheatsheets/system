@@ -1,0 +1,5 @@
+
+lshw -class disk	# list the hardware disk
+lshw -class memory	# list the hardware RAM
+lsmem
+

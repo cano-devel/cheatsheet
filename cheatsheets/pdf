@@ -1,0 +1,1 @@
+qpdf --password=<passwd> --decrypt <input_file> <output_file>   # remove encryption from pdf

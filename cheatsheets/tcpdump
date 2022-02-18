@@ -1,0 +1,2 @@
+tcpdump -A -s 0 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'  # show HTTP frames
+tcpdump -i any 'port 443 && (tcp[13] & 1 != 0 || tcp[13] & 4 != 0)' # show flags tcp ending flags: FIN RST
