@@ -1,0 +1,1 @@
+stdbuf -i0 -o0 -e0 <cmd>	# disable the stdout buffer

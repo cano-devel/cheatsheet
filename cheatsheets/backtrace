@@ -1,0 +1,8 @@
+nm Mainboard_Software | grep _Z13MainboardInit7QString   # get symbol addr
+# 00000000000a3fec T _Z13MainboardInit7QString
+
+echo "obase=16;<NUM_A>+<NUM_B>" | bc -l  # sum hexadecimal numbers
+
+addr2line -C -a -s -f -p -e ./D098_Mainboard_Software 0xb1a79	# get file:line
+# 0x00000000000b1a79: HandleBacktraceSignals at SignalModule.c:492
+
