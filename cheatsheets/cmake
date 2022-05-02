@@ -1,0 +1,46 @@
+# cmake version
+cmake_minimum_required(VERSION 3.6)
+
+# cpp version
+project(zproxy LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+
+# get current git info
+if (EXISTS "${PROJECT_SOURCE_DIR}/.git/HEAD")
+    file(READ "${PROJECT_SOURCE_DIR}/.git/HEAD"
+        PROJECT_SOURCE_VERSION)
+    if ("${PROJECT_SOURCE_VERSION}" MATCHES "^ref:")
+        string(REGEX REPLACE "^ref: *([^ \n\r]*).*" "\\1"
+            PROJECT_GIT_REF "${PROJECT_SOURCE_VERSION}")
+        file(READ "${PROJECT_SOURCE_DIR}/.git/${PROJECT_GIT_REF}"
+            PROJECT_SOURCE_VERSION)
+    endif ()
+    string(STRIP "${PROJECT_SOURCE_VERSION}"
+        PROJECT_SOURCE_VERSION)
+endif ()
+
+# project name
+project(zproxy-ng)
+
+# create var
+set(var value1 value2)
+
+# add compilation definitions
+add_definitions(-DPROJECT_NAME="zproxy-ng")
+
+# add compilation flags
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64 -std=c++1z -Wall -g -rdynamic -pipe")
+
+# add links
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ldl -lev -lpthread -lssl")
+
+# add path to search libs
+link_directories(/usr/lib/x86_64-linux-gnu)
+
+# add source code
+set (sources src/main.c src/proxy.c include/proxy.h)
+add_executable(zproxy src/main.c ${sources})
+
+# add link libs
+set (linked_libs -ldl -lev -lpthread)
+target_link_libraries(${PROJECT_NAME} ${linked_libs})
