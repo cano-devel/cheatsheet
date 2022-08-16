@@ -1,0 +1,51 @@
+http://www.icce.rug.nl/documents/cplusplus/cplusplus01.html		# cpp annotations
+
+https://www.hackerearth.com/practice/notes/standard-template-library/	# cheatsheet
+
+# two functions with the same name cannot difference only in returning value
+
+void showstring(char *str = "Hello World!\n");   # default input parameters, it should be set in "declaration"
+void two_ints(int a = 1, int b = 4);		# if several parameters are defined by default, the left onces, only can be ommited if right were ommited
+
+char const *buf;	# read ptr: *buf='s' (don't allow); buff++ (allowed)
+
+# const bareword, whatever occurs to the left to the keyword may not be changed
+
+
+void by_reference(string const &large_obj)  # reference is usually p used when the passed object is large and we want to avoid a memory copy. Ref avoid to call the copy constructor
+
+# an object moved with std::move it is cleared from the variable. It returns 0, empty string..
+
+enum class SafeEnum { NOT_OK, // 0, by implication OK = 10, MAYBE_OK // 11, by implication };   # enum class allow to use the same name in different classes
+enum class CharEnum: unsigned char  # modify enum type
+case SafeEnum::NOT_OK ... SafeEnum::OK:  # a set of values can be defined in a switch
+
+
+# storation structs
+# array: consecutive in memory, it cannot be resized
+# list: it is a double linked list, it can be resized. Removes/insertions are quick. List has to be walked to get a element. it is a bit bigger because next and prevous ptr are saved
+# vector: it is consecutive in memory, it is an dynamic array. when elements are rem/add, it has to be trunked. elements are accessed quicker by the indes. Iterator is modified when elements are added/removed
+
+# data structs initialization
+    struct Data
+    {
+        int d_first;
+        double d_second;
+        std::string d_third;
+    };
+    Data data{ .d_first = 1, .d_third = "hello" };
+
+auto [f, s] = values();      # get struct values in the function response
+
+for (auto const &[key, value]: elems) # safety and quick way to read a map
+
+static_cast 		# casting  int to a double
+static_cast 		# casting  num values to int
+static_cast 		# casting  When undoing or introducing the signed-modifier
+static_cast 		# A void *
+const_cast		# const and unconst
+reinterpret_cast	# opperation that we wanto to disable compilator checks because we are modifying how to manage the data. ex: double to stream. Wideuse in byte functions
+dynamic_cast		# use to objects opperations. ex: reinterpret method as hierarchy
+
+# "using" directive is not allowed in header
+# "std" namespace should not be used

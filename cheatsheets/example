@@ -1,0 +1,18 @@
+cmd  # descrpt
+
+>> title cde
+superprograma
+<<
+
+# solo desc
+
+>> program1
+superprograma_a
+superprograma_a1
+superprograma_a2
+<<
+>> program2
+superprograma_b
+<<
+
+# solo descrpt
