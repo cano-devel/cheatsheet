@@ -6,10 +6,10 @@
 #    cmd  # description";
 #
 #    - adding a block example';
-#    >> description';
+#    >>> description';
 #    line1";
 #    line2";
-#    <<';
+#    <<<';
 
 
 use strict;
@@ -53,7 +53,7 @@ sub filterCS
 
 	while (my $line = <$fh>)
 	{
-		if (!$block && $line =~ /^($not_parse_init_block_reg[^$parse_desc]*)\s*$parse_desc\s*(.+)/) {
+		if (!$block && $line =~ /^(${not_parse_init_block_reg}\[^$parse_desc\]*)?\s*$parse_desc\s*(.+)/) {
 			my $l = $1;
 			my $d = $2;
 			if ($d =~ /$st/ || $l =~ /$st/) {
