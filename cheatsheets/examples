@@ -1,0 +1,11 @@
+cmd_1 # description for a command
+
+
+>>> code block
+line a
+line_b
+<<<
+
+# only description
+
+cmd # description for a command
