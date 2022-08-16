@@ -1,0 +1,1 @@
+tar -czvf name.tar.gz dir1 dir2		# tar several directories in a file
