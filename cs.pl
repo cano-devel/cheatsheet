@@ -22,9 +22,10 @@ my @list = ();
 my $comment_char = "//";
 my $look_for_all = '_';
 my $parse_desc = '#';
-my $not_parse_init_block_reg = '[^>][^>]';
+my $not_parse_init_block_reg = '[^>]{3}';
 my $parse_init_block = '>>>';
 my $parse_end_block = '<<<';
+my $parse_line_pattern = '^(' . ${not_parse_init_block_reg} . '[^' . $parse_desc . ']*)?\s*' . $parse_desc . '\s*(.+)';
 
 sub printDirFile
 {
@@ -53,7 +54,7 @@ sub filterCS
 
 	while (my $line = <$fh>)
 	{
-		if (!$block && $line =~ /^(${not_parse_init_block_reg}\[^$parse_desc\]*)?\s*$parse_desc\s*(.+)/) {
+		if (!$block && $line =~ /$parse_line_pattern/) {
 			my $l = $1;
 			my $d = $2;
 			if ($d =~ /$st/ || $l =~ /$st/) {
