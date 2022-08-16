@@ -63,7 +63,7 @@ sub printCS
 	my $st = shift @_;
 
 	foreach my $it (@list) {
-		if ($it->{line} =~ /$st/) {
+		if ($it->{desc} =~ /$st/ || $it->{line} =~ /$st/) {
 			say "$comment_char $it->{desc}";
 			say "$it->{line}";
 			say "";
