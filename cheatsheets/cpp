@@ -2,6 +2,8 @@ http://www.icce.rug.nl/documents/cplusplus/cplusplus01.html		# cpp annotations
 
 https://www.hackerearth.com/practice/notes/standard-template-library/	# cheatsheet
 
+http://www.icce.rug.nl/documents/cplusplus/cplusplus01.html		# examples
+
 # two functions with the same name cannot difference only in returning value
 
 void showstring(char *str = "Hello World!\n");   # default input parameters, it should be set in "declaration"
@@ -56,3 +58,29 @@ dynamic_cast		# use to objects opperations. ex: reinterpret method as hierarchy
 
 # "using" directive is not allowed in header
 # "std" namespace should not be used
+
+>>> Namespace alias
+namespace CV = CppAnnotations::Virtual;
+CV::ptr = nullptr;
+<<<
+
+# Time resolutions: std::ratio. Represent fractions of time.
+
+>>> Templates declaration
+template <class TypeName>
+void Proceed(TypeName *ArrayName);
+<<<
+
+>>> Templates definition
+template <class TypeName>
+void Proceed(TypeName *ArrayName)
+{
+	for (int i = 0 ; i < 6 ; i++)
+	{
+		cout << *ArrayName << endl;
+		++ArrayName;  // Switches to the next element of the array.
+	}
+	cout << endl;
+	// Of course if TypeName is char then we can check if  *ArrayName == "\0".
+}
+<<<

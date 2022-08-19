@@ -1,0 +1,2 @@
+dconf dump / > dconf-settings.ini			# dump and save gnome configuration
+cat dconf-settings.ini | dconf load /		# restore gnome configuration
