@@ -54,7 +54,7 @@ sub filterCS
 
 	while (my $line = <$fh>)
 	{
-		if (!$block && $line =~ /$parse_line_pattern/) {
+		if (!$block && $line =~ /$parse_line_pattern/i) {
 			my $l = $1;
 			my $d = $2;
 			if ($d =~ /$st/ || $l =~ /$st/) {
