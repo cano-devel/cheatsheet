@@ -84,3 +84,51 @@ void Proceed(TypeName *ArrayName)
 	// Of course if TypeName is char then we can check if  *ArrayName == "\0".
 }
 <<<
+
+>>> coding style
+class Person
+{
+	std::string d_name;         // variables use the prefix "d_"
+
+	public:                     // first declare public methods
+		void setName(std::string const &name);	//  set methods use the prefix "set"
+		std::string const &name()    const;		// get methods don't use prefix. Note the "const" directive to protect the data
+
+	private: 				// next declare private methods
+		...
+}
+<<<
+
+>>> Warning, variable returned by reference
+string &Person::name() const
+{
+	return d_name;
+}
+Person somebody;
+somebody.name() = "Eve";    // Oops, backdoor changing the name
+<<<
+
+>>> constructor. Both are valid but curly is prefered to avoid problem
+Person yo ("Alvaro", "sfsf");  // this definition could collapse with a function of an imported library
+Person yo {"Alvaro", "sfsf"};
+<<<
+
+>>> initializate an sub-object by reference
+Process::Process(Configfile &conf) : d_conf(conf)
+{}
+<<<
+
+>>> Create a smart pointer (shared_ptr, unique_ptr) without type
+main () {
+	std::shared_ptr<void> rules
+	funct(rules);
+}
+
+void funct(std::shared_ptr<void> *rules) {
+	if (*rules == nullptr)
+		*rules = std::make_shared<modsecurity::Rules>();
+
+	auto local_rules = std::static_pointer_cast<modsecurity::Rules>(*rules);
+	...
+}
+<<<
