@@ -1,4 +1,1 @@
-yum install <pagckage>
-yum search <pagckage>
-yum list installed 		# packages installed
-yum whatprovides '*/openssl/err.h'  # retrieve the package that contains the file
+/etc/sysconfig/network-scripts/ifcfg-eth0		# manage interface config

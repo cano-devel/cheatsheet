@@ -1,0 +1,4 @@
+screen -ls				#list running sessions
+screen -S <name>		# start a session with a name
+screen -r <name>		# recuperate a session
+CTRL + A + D		# leave from the session but it continues running

@@ -1,0 +1,6 @@
+yum install <pagckage>
+yum search <pagckage>
+yum reinstall <package>
+yum list installed 		# packages installed
+yum whatprovides '*/openssl/err.h'  # retrieve the package that contains the file
+yum makecache 			#update cache

@@ -1,0 +1,6 @@
+ctrl+y 						# redo
+ctrl+win+(left|right) 	  	# switch desktop
+ctrl+win+shift+(left|right)	# move app to desktop
+win+shift+(left|right)		# move app to screen
+
+# pause music

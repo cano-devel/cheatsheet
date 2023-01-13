@@ -1,0 +1,9 @@
+df -h 					# list mount pointers and free space
+fdisk -l				# list disk devices
+fdisk /dev/<disk>		# modify a disk device
+pvs						# list the storage architecture
+vgextend <lvm_group> /dev/<disk> 	# add a physical dis to the LVM group
+vgdisplay [lvm_group] | grep “Free”	# list the free space of the group
+lvextend  -L+<freespace>G /dev/<volgroup>/<volume>		# extend logical volume 
+resize2fs /dev/<vol_group>/<volume>		# expand the ext3 file system. Use other command for another format extenssion
+mount -av				# remount fstab

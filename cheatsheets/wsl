@@ -1,0 +1,9 @@
+wsl --exec CMD - execute commands w/o linux shell
+wsl -l -v [--running ]
+wsl --list --online - view all free linux distributions
+wsl --install -d <distro> - CentOS7 is not availabe by default. but you can get other distributions this way
+wsl --set-default <distro> - in our case, distro == CentOS7
+wsl --unregister <distro> - use to remove
+wsl --shutdown	
+wsl --export Ubuntu-20.04 ubuntubackup.tar
+wsl --import Ubuntu-20.04 C:\Users\MyPC\AppData\Local\Packages\Ubuntu C:\Users\MyPC\Documents\ubuntubackup.tar
